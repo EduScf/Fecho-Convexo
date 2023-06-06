@@ -7,7 +7,7 @@
 #include <cstdlib>
 
 void LeituraArquivo(char *nomeArquivo);
-    
+void avaliaTempo();
 void executaOperacoes(int n);
 
 #endif  // LEITURA_ARQUIVO_HPP

@@ -18,6 +18,6 @@ int main(int argc, char *argv[]){
     3- BucketSort
     4- Marcha de Jarvis
     */
-    executaOperacoes(1);
+    executaOperacoes(4);
     return 0;
 }
