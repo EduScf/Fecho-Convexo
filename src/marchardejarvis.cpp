@@ -8,15 +8,15 @@ FechoConvexo marchaDeJarvis(PontoCartesiano pontos[], int tamanho, FechoConvexo 
     PontoCartesiano* PontosFecho =  (PontoCartesiano*)malloc(tamanho * sizeof(PontoCartesiano));
     int tamanhoFechoConvexo = 0;
 
-    // Find the leftmost point
+    // Achar o ponto mais a esquerda
     int l = 0;
     for (int i = 1; i < tamanho; i++)
         if (pontos[i].getX() < pontos[l].getX())
             l = i;
   
-    // Start from leftmost point, keep moving counterclockwise
-    // until reach the start point again.  This loop runs O(h)
-    // times where h is number of pontos in result or output.
+    //Começar do ponto mais a esquerda, continuar no sentido anti-horário
+    //Enquanto não chegar no ponto inicial novamente. Este loop roda O(h)
+    // vezes onde h é o numero de pontos de resultado ou saída
     int p = l, q;
     do
     {
@@ -24,11 +24,11 @@ FechoConvexo marchaDeJarvis(PontoCartesiano pontos[], int tamanho, FechoConvexo 
         PontosFecho[tamanhoFechoConvexo] = pontos[p];
         tamanhoFechoConvexo++;
 
-        // Search for a point 'q' such that orientation(p, q,
-        // x) is counterclockwise for all pontos 'x'. The idea
-        // is to keep track of last visited most counterclock-
-        // wise point in q. If any point 'i' is more counterclock-
-        // wise than q, then update q.
+        // Procuar por um ponto 'q' tal que a orientação(p, q,
+        // x) é anti-horária para todos os pontos 'x'. A ideia
+        // é continuar buscando o ultimo ponto visitado mais no sentido
+        // anti-horário possivel em q. Se qualquer ponto 'i' é mais
+        // anti-horario que o q, atualizar o q.
         q = (p+1)%tamanho;
         for (int i = 0; i < tamanho; i++)
         {
@@ -38,9 +38,9 @@ FechoConvexo marchaDeJarvis(PontoCartesiano pontos[], int tamanho, FechoConvexo 
                q = i;
         }
   
-        // Now q is the most counterclockwise with respect to p
-        // Set p as q for next iteration, so that q is added to
-        // result 'hull'
+        // Agora o q é o ponto mais anti-horário que respeita o p
+        // Setar p como q para a próxima iteração, para que o q seja
+        // adicionada ao PontosFecho.
         p = q;
   
     } while (p != l);  // While we don't come to first point
