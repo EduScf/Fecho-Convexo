@@ -14,8 +14,8 @@ SRC = src
 OBJ = obj
 INC = include
 BIN = bin
-OBJS = $(OBJ)/insertionsort.o $(OBJ)/leituraArquivo.o $(OBJ)/mergesort.o $(OBJ)/bucketsort.o $(OBJ)/ponto.o $(OBJ)/reta.o $(OBJ)/poligono.o $(OBJ)/scandegraham.o $(OBJ)/marchardejarvis.o $(OBJ)/main.o
-HDRS = $(INC)/insertionsort.hpp $(INC)/leituraArquivo.hpp $(INC)/mergesort.hpp $(INC)/bucketsort.hpp $(INC)/ponto.hpp $(INC)/reta.hpp $(INC)/poligono.hpp $(INC)/scandegraham.hpp $(INC)/marchardejarvis.hpp
+OBJS = $(OBJ)/insertionsort.o $(OBJ)/leituraArquivo.o $(OBJ)/memlog.o $(OBJ)/mergesort.o $(OBJ)/bucketsort.o $(OBJ)/ponto.o $(OBJ)/reta.o $(OBJ)/poligono.o $(OBJ)/scandegraham.o $(OBJ)/marchardejarvis.o $(OBJ)/main.o
+HDRS = $(INC)/insertionsort.hpp $(INC)/leituraArquivo.hpp $(INC)/memlog.h $(INC)/mergesort.hpp $(INC)/bucketsort.hpp $(INC)/ponto.hpp $(INC)/reta.hpp $(INC)/poligono.hpp $(INC)/scandegraham.hpp $(INC)/marchardejarvis.hpp
 CFLAGS = -Wall -c -g3 -I$(INC) -pg
 
 EXE = $(BIN)/main
@@ -61,6 +61,9 @@ $(OBJ)/scandegraham.o: $(HDRS) $(SRC)/scandegraham.cpp
 
 $(OBJ)/marchardejarvis.o: $(HDRS) $(SRC)/marchardejarvis.cpp
 	$(CC) $(CFLAGS) -o $(OBJ)/marchardejarvis.o $(SRC)/marchardejarvis.cpp
+
+$(OBJ)/memlog.o: $(HDRS) $(SRC)/memlog.c
+	$(CC) $(CFLAGS) -o $(OBJ)/memlog.o $(SRC)/memlog.c
 
 run: $(EXE)
 	$(EXE) $(FILE)

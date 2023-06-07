@@ -15,6 +15,7 @@ int PontoCartesiano::getX() const {
 }
 
 int PontoCartesiano::getY() const {
+    LEMEMLOG((long int)(this->y),sizeof(int),1);
     return y;
 }
 
@@ -97,6 +98,7 @@ PontoCartesiano encontrarPrimeiroPonto(PontoCartesiano arr[], int tamanho) {
 
     for (int i = 1; i < tamanho; ++i) {
         int coordenadaYAtual = arr[i].getY();
+
         int coordenadaYMenor = primeiroPonto.getY();
 
         if (coordenadaYAtual < coordenadaYMenor) {

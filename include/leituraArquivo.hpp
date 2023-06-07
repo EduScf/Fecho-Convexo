@@ -5,6 +5,7 @@
 #include <string>
 #include <cstring>
 #include <cstdlib>
+#include "memlog.h"
 
 void LeituraArquivo(char *nomeArquivo);
 void avaliaTempo();
