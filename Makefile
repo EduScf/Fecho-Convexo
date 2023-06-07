@@ -63,7 +63,7 @@ $(OBJ)/marchardejarvis.o: $(HDRS) $(SRC)/marchardejarvis.cpp
 	$(CC) $(CFLAGS) -o $(OBJ)/marchardejarvis.o $(SRC)/marchardejarvis.cpp
 
 run: $(EXE)
-	$(EXE) $(INPUT_FILE7)
+	$(EXE) $(FILE)
 	
 clean:
 	rm -f $(EXE) $(OBJS) gmon.out

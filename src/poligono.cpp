@@ -31,3 +31,11 @@ void FechoConvexo::imprimirFechoConvexo() const {
         std::cout << "(" << ponto1.getX() << ", " << ponto1.getY() << ")" << std::endl;
     }
 }
+
+void FechoConvexo::imprimirRetasMatematicaDoFecho() const{
+    for(int i = 0; i < quantidadeRetas; i++)
+    {
+        const Reta& reta = retas[i];
+        reta.imprimirRetaMatematica();
+    }
+}

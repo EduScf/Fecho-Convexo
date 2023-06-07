@@ -123,5 +123,9 @@ void executaOperacoes(int n){
 
     avaliaTempo();
 
+    //Imprimir as retas matemáticas do fecho para ganhar ponto extra
+    printf("\nRetas matemáticas do fecho para ponto extra:\n");
+    fechoConvexo.imprimirRetasMatematicaDoFecho();
+
     free(pontos);
 }

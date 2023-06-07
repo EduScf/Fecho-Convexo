@@ -59,3 +59,9 @@ double Reta::calcularCoeficienteLinear() const {
 void Reta::imprimirReta() const {
     printf("Reta: (%d, %d) -> (%d, %d)\n", ponto1.getX(), ponto1.getY(), ponto2.getX(), ponto2.getY());
 }
+
+void Reta::imprimirRetaMatematica() const{
+    double coeficienteAngular = calcularCoeficienteAngular();
+    double coeficienteLinear = calcularCoeficienteLinear();
+    printf("Reta: y = %.2lfx + %.2lf\n", coeficienteAngular, coeficienteLinear);
+}

@@ -18,6 +18,7 @@ public:
     Reta* getRetas();
     int getQuantidadeRetas() const;
     void imprimirFechoConvexo() const;
+    void imprimirRetasMatematicaDoFecho() const;
 };
 
 #endif

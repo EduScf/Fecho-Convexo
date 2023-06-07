@@ -21,6 +21,7 @@ public:
     double calcularCoeficienteAngular() const;
     double calcularCoeficienteLinear() const;
     void imprimirReta() const;
+    void imprimirRetaMatematica() const;
 };
 
 #endif  // RETA_HPP
